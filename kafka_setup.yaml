@@ -89,8 +89,8 @@ spec:
       - name: kafka
         image: bitnami/kafka:2.6.0  
 #        image: bitnami/kafka:latest
-        securityContext:
-          runAsUser: 0
+      #  securityContext:
+       #   runAsUser: 0
         resources:
           requests:
             memory: "1G"
