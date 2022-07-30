@@ -34,7 +34,7 @@ kind: StatefulSet
 metadata:
   name: crs-zookeeper
 spec:
-  replicas: 2
+  replicas: 1
   serviceName: zookeeper-cluster
   selector:
     matchLabels:
@@ -74,7 +74,7 @@ kind: StatefulSet
 metadata:
   name: crs-kafka
 spec:
-  replicas: 2
+  replicas: 1
   serviceName: kafka-cluster
   selector:
     matchLabels:
