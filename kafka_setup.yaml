@@ -15,7 +15,7 @@ spec:
   - name: leader
     port: 3888
     targetPort: 3888
-  #clusterIP: None    
+  clusterIP: None    
 ---
 apiVersion: v1
 kind: Service
@@ -69,8 +69,8 @@ spec:
           value:  crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888
 ---
 apiVersion: apps/v1
-kind: StatefulSet
-#kind: Deployment
+#kind: StatefulSet
+kind: Deployment
 metadata:
   name: crs-kafka
 spec:
