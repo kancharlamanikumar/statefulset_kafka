@@ -27,7 +27,7 @@ spec:
   ports:
   - port: 9092
     targetPort: 9092
-  type: clusterIP
+  type: NodePort
  # type: LoadBalancer
 ---
 apiVersion: apps/v1
