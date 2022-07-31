@@ -27,8 +27,8 @@ spec:
   ports:
   - port: 9092
     targetPort: 9092
-  type: NodePort
- # type: LoadBalancer
+  #type: NodePort
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: StatefulSet
