@@ -27,7 +27,8 @@ spec:
   ports:
   - port: 9092
     targetPort: 9092
-  type: LoadBalancer
+  type: clusterIP
+ # type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: StatefulSet
