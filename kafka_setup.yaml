@@ -106,8 +106,8 @@ spec:
           #value: zookeeper-cluster:2181
         - name: ALLOW_ANONYMOUS_LOGIN
           value: "yes"
-        - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://10.8.13.203:9092
+      #  - name: KAFKA_ADVERTISED_LISTENERS
+       #   value: PLAINTEXT://10.8.13.203:9092
           
         #advertised.listeners=PLAINTEXT://:9092
       #  - name: ALLOW_PLAINTEXT_LISTENER
