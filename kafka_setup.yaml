@@ -108,10 +108,10 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
+        #- name: KAFKA_ADVERTISED_LISTENERS
+        #  value: CLIENT://10.8.13.203:9092,EXTERNAL://34.170.26.18:290922
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: CLIENT://10.8.13.203:9092,EXTERNAL://34.170.26.18:290922
-       # - name: KAFKA_ADVERTISED_LISTENERS
-        #  value: PLAINTEXT://34.170.26.18:9092
+          value: PLAINTEXT://0.0.0.0:9092
         
         
         CLIENT://kafka:9092,EXTERNAL://localhost:29092
