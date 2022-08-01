@@ -30,6 +30,19 @@ spec:
   #type: NodePort
   type: LoadBalancer
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-cluster1
+spec:
+  selector:
+    app: kafka-cluster1
+  ports:
+  - port: 9092
+    targetPort: 9092
+  #type: NodePort
+  type: LoadBalancer
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -114,6 +127,9 @@ spec:
         #  value: CLIENT://10.8.13.203:9092,EXTERNAL://34.170.26.18:290922
         - name: KAFKA_ADVERTISED_LISTENERS
           value: PLAINTEXT://kafka-cluster:9092
+        - name: KAFKA_ADVERTISED_LISTENERS
+          value: PLAINTEXT://kafka-cluster1:9092
+          
         
         
        # CLIENT://kafka:9092,EXTERNAL://localhost:29092
