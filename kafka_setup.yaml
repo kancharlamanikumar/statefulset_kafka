@@ -30,25 +30,12 @@ spec:
   #type: NodePort
   type: LoadBalancer
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: kafka-cluster1
-spec:
-  selector:
-    app: kafka-cluster1
-  ports:
-  - port: 9092
-    targetPort: 9092
-  #type: NodePort
-  type: LoadBalancer
----
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: crs-zookeeper
 spec:
-  replicas: 1
+  replicas: 2
   serviceName: zookeeper-cluster
   selector:
     matchLabels:
@@ -82,8 +69,7 @@ spec:
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
         - name: ZOO_SERVERS
-          value:  crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888
-          #value:  crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2888:3888
+          value:  crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2888:3888
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -116,8 +102,7 @@ spec:
          - containerPort: 9092
         env:
         - name: KAFKA_CFG_ZOOKEEPER_CONNECT
-          value: crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2181
-          #value: crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2181,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2181 
+          value: crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2181,crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2181 
           #value: zookeeper-cluster:2181
         - name: ALLOW_ANONYMOUS_LOGIN
           value: "yes"
@@ -125,10 +110,10 @@ spec:
           value: "yes" 
        # - name: KAFKA_ADVERTISED_LISTENERS
         #  value: CLIENT://10.8.13.203:9092,EXTERNAL://34.170.26.18:290922
-        - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://kafka-cluster:9092
-        - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://kafka-cluster1:9092
+        #- name: KAFKA_ADVERTISED_LISTENERS
+         # value: PLAINTEXT://kafka-cluster:9092
+        #- name: KAFKA_ADVERTISED_LISTENERS
+        #  value: PLAINTEXT://kafka-cluster1:9092
           
         
         
