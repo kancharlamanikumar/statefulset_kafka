@@ -108,8 +108,8 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
-        - name: KAFKA_ADVERTISED_LISTENERS
-          value: 10.4.0.39:9092,10.4.2.17:9092
+       # - name: KAFKA_ADVERTISED_LISTENERS
+        #  value: 10.4.0.39:9092,10.4.2.17:9092
         #- name: KAFKA_ADVERTISED_LISTENERS
          # value: PLAINTEXT://kafka-cluster:9092
         #- name: KAFKA_ADVERTISED_LISTENERS
