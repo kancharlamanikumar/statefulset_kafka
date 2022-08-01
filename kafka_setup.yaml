@@ -112,8 +112,8 @@ spec:
           value: "yes" 
        # - name: KAFKA_ADVERTISED_LISTENERS
         #  value: CLIENT://10.8.13.203:9092,EXTERNAL://34.170.26.18:290922
-      #  - name: KAFKA_ADVERTISED_LISTENERS
-       #   value: PLAINTEXT://10.8.13.203:9092
+        - name: KAFKA_ADVERTISED_LISTENERS
+          value: PLAINTEXT://kafka-cluster:9092
         
         
        # CLIENT://kafka:9092,EXTERNAL://localhost:29092
