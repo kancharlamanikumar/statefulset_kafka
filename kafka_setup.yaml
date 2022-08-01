@@ -30,6 +30,19 @@ spec:
   #type: NodePort
   type: LoadBalancer
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-cluster-1
+spec:
+  selector:
+    app: kafka-cluster-1
+  ports:
+  - port: 9092
+    targetPort: 9092
+  #type: NodePort
+  type: LoadBalancer
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -126,14 +139,14 @@ metadata:
   name: crs-kafka
 spec:
   replicas: 1
-  serviceName: kafka-cluster
+  serviceName: kafka-cluster-1
   selector:
     matchLabels:
-        app: kafka-cluster
+        app: kafka-cluster-1
   template:
     metadata:
       labels:
-        app: kafka-cluster
+        app: kafka-cluster-1
     spec:
       hostname: kafka
       containers:
