@@ -106,5 +106,9 @@ spec:
           #value: zookeeper-cluster:2181
         - name: ALLOW_ANONYMOUS_LOGIN
           value: "yes"
+        - name: ADVERTISED_LISTENERS
+          value: PLAINTEXT://34.170.26.18:9092
+          
+        #advertised.listeners=PLAINTEXT://:9092
       #  - name: ALLOW_PLAINTEXT_LISTENER
        #   value: "yes" 
