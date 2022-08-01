@@ -108,10 +108,10 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
-        - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://10.4.0.45:9092
-        - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://crs-kafka-1:9092
+       # - name: KAFKA_ADVERTISED_LISTENERS
+        #  value: PLAINTEXT://10.4.0.45:9092
+      #  - name: KAFKA_ADVERTISED_LISTENERS
+      #    value: PLAINTEXT://crs-kafka-1:9092
      #   - name: KAFKA_ADVERTISED_LISTENERS
        #:w   value: PLAINTEXT://0.0.0.0:9092
        # - name: KAFKA_ADVERTISED_LISTENERS
