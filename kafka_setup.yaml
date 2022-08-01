@@ -136,7 +136,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 #kind: Deployment
 metadata:
-  name: crs-kafka
+  name: crs-kafka-1
 spec:
   replicas: 1
   serviceName: kafka-cluster-1
